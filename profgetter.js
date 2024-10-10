@@ -170,6 +170,9 @@ async function fetchAndDisplayProfessions(player, characterUUID) {
             if (professions.hasOwnProperty(prof)) {
                 let level = professions[prof].level;
                 let xp = professions[prof].xp;
+                if (xp === "null") {
+                    xp = 0;
+                }
 
                 message.append(`${toTitleCase(prof)}: Level ${level}, XP ${xp}%\n`);
             }
